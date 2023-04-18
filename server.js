@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
 
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) =>{
     console.log('Here');
-    //res.status(500).json({message: 'Error'});
-    res.download('server.js');
-    res.send("Hi");
+    res.render('index', {text: 'World'});
 });
 
 app.listen(3000);
